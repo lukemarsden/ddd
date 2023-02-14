@@ -1,0 +1,13 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: ddd-sk-learn-random-forest-reg
+  namespace: helix-ddd
+spec:
+  predictor:
+    model:
+      modelFormat:
+        name: sklearn
+      runtime: kserve-mlserver
+      storageUri: s3://c175a1a5-0953-4d57-b138-def5128afcaf/0/4429bdb21c4149f3b093f336656212fb/artifacts/model
+    serviceAccountName: ddd-sk-learn-random-forest-reg
